@@ -1,0 +1,17 @@
+@import "/src/styles/variables";
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $black;
+  border-radius: 0px;
+}
+
+.task {
+  border: 1px solid $black;
+  align-items: center;
+}
+
+.update-task {
+  border: 1px solid $black;
+}

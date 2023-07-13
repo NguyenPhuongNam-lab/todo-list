@@ -1,1 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/variables";
+@import "styles/texts";
+@import "styles/sizing";
+@import "styles/button";
+
+@font-face {
+  font-family: "Arimo";
+  src: url("../src/assets/font/Arimo-Regular.ttf") format("truetype");
+}
+
+body,
+html {
+  height: 100vh;
+  font-family: Source Sans Pro, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $gray-100;
+}
+
+button {
+  font-family: Arimo;
+}
+
+textarea {
+  font-family: Source Sans Pro, sans-serif !important;
+}
+
+.title {
+  color: $black;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.align-item-center {
+  align-items: center !important;
+}
+
+.justify-content-space-between {
+  justify-content: space-between !important;
+}
+
+.form-group {
+  display: flex !important;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .form-title {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: $black;
+    margin-bottom: 10px;
+  }
+}
+
+.form-control {
+  height: 32px;
+  font-size: 12px;
+  border: 1px solid $gray-100;
+  border-radius: 5px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-auto {
+  margin: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}
+
+.mx-10 {
+  margin: 0px 10px !important;
+}
+
+.mx-20 {
+  margin: 0px 20px !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-7 {
+  padding: 7px !important;
+}
+
+.py-20 {
+  padding: 20px 0 20px 0 !important;
+}
+
+.px-10 {
+  padding: 0 10px 0 10px !important;
+}
+
+.p-15 {
+  padding: 15px !important;
+}

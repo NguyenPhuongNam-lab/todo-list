@@ -1,0 +1,58 @@
+@import "variables";
+
+.button {
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: $white;
+  padding: 6px 20px;
+
+  &.green {
+    font-size: 15px;
+    background-color: $green;
+  }
+
+  &.blue-100 {
+    background-color: $blue-100;
+    font-size: 12px;
+  }
+
+  &.blue {
+    background-color: $blue;
+    font-size: 15px;
+  }
+
+  &.red {
+    background-color: $red;
+    font-size: 12px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: $gray !important;
+    border: 1px solid $gray !important;
+    color: $white !important;
+
+    &.outline-primary {
+      background-color: $white !important;
+      color: $gray !important;
+    }
+  }
+}
+
+.dropdown {
+  font-size: 12px;
+  border: 1px solid $black;
+  border-radius: 0px;
+  height: 30px;
+}
+
+.select-date {
+  font-size: 12px;
+  border: 1px solid $black;
+  border-radius: 0px;
+  height: 28px;
+  margin-left: -5px;
+  width: -webkit-fill-available;
+}

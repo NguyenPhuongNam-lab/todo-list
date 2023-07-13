@@ -1,0 +1,22 @@
+:host::ng-deep {
+  option {
+    /* Tùy chỉnh các thuộc tính giao diện cho từng option */
+    background-color: #f2f2f2;
+    color: #333;
+    min-height: 20px !important;
+    font-size: 14px !important
+    ;
+    padding: 5px !important;
+  }
+
+  option:hover {
+    /* Tùy chỉnh các thuộc tính giao diện khi hover vào option */
+    background-color: #ddd;
+    color: #555;
+  }
+}
+
+.text-area {
+  box-sizing: border-box;
+  padding: 5px !important;
+}

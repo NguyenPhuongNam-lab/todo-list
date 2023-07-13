@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          2,
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": true
+            }
+          },
+          {
+            "selector": "variable",
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "typeParameter",
+            "format": ["PascalCase"],
+            "prefix": ["T"]
+          },
+          {
+            "selector": "variable",
+            "format": ["PascalCase"],
+            "types": ["boolean"],
+            "prefix": ["is", "should", "has", "can", "did", "will", "was"]
+          },
+          {
+            "selector": "enum",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "enumMember",
+            "format": ["PascalCase", "camelCase"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}

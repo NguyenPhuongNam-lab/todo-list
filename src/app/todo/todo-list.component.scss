@@ -1,0 +1,41 @@
+@import "/src/styles/variables";
+
+:host {
+  min-height: 100%;
+  display: flex;
+  max-width: 1209px;
+  margin: auto;
+  background-color: $white;
+}
+
+.vertical-line {
+  margin: 0px;
+  border: 1px solid $black;
+}
+
+.new-task {
+  width: 43vw;
+}
+
+.todo {
+  width: 57vw;
+}
+
+.bulk-action {
+  width: 100%;
+  margin-top: auto;
+  background-color: $gray;
+  border: 1px solid $black;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 910px) {
+  :host {
+    display: block !important;
+  }
+
+  .new-task,
+  .todo {
+    width: 100vw;
+  }
+}

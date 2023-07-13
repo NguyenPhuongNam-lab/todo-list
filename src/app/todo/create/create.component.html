@@ -1,0 +1,61 @@
+<form [formGroup]="todoForm">
+  <div class="form-group">
+    <input
+      class="form-control"
+      formControlName="title"
+      placeholder="Add new task ..."
+    />
+  </div>
+  <div class="form-group">
+    <label class="form-title">Description</label>
+    <textarea
+      rows="10"
+      formControlName="desc"
+      class="text-area w-100"
+    ></textarea>
+  </div>
+  <div class="d-flex justify-content-space-between">
+    <div class="form-group w-45">
+      <label class="form-title">Due Date</label>
+      <div class="d-flex align-item-center" (click)="$any(date).showPicker()">
+        <input
+          #date
+          id="session"
+          type="date"
+          formControlName="dueDate"
+          [min]="dueDate"
+          style="visibility: hidden; width: 0"
+        />
+        <input
+          class="select-date px-10"
+          type="text"
+          [value]="date.value | date : 'dd MMM yyyy'"
+          readonly
+        />
+        <i style="margin-left: -25px" class="fa fa-calendar-alt"></i>
+      </div>
+    </div>
+    <div class="form-group w-45">
+      <label class="form-title">Piority</label>
+      <select class="custom-select dropdown px-10" formControlName="piority">
+        <option
+          *ngFor="let piority of piorityOption"
+          [value]="piority.value"
+          class="px-10"
+        >
+          {{ piority.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <button
+      class="button green p-7 w-100"
+      type="submit"
+      (click)="onUpdateTask()"
+      [disabled]="!todoForm.valid || !todoForm.dirty"
+    >
+      {{ todo ? "Update" : "Add" }}
+    </button>
+  </div>
+</form>

@@ -1,0 +1,47 @@
+<!-- New Task-->
+<div class="new-task d-flex flex-column align-item-center mb-20">
+  <p class="title">New Task</p>
+  <div class="w-85">
+    <app-create (confirmClicked)="getData()"></app-create>
+  </div>
+</div>
+
+<hr class="vertical-line" />
+<!-- To do list -->
+<div class="todo d-flex flex-column align-item-center">
+  <p class="title">To Do List</p>
+  <div class="w-85">
+    <div class="form-group">
+      <input
+        #searchTask
+        class="form-control"
+        placeholder="Search ..."
+        (change)="searchData(searchTask.value)"
+      />
+    </div>
+    <ng-container style="margin-bottom: 20px" *ngFor="let todo of todoList">
+      <app-todo
+        [todoInput]="todo"
+        (rowSelection)="onRowSelection($event)"
+        (confirmClicked)="getData()"
+        (removeClicked)="deleteTask($event)"
+      ></app-todo>
+    </ng-container>
+  </div>
+
+  <div class="bulk-action" *ngIf="selectedRows.length > 0">
+    <div class="p-15 d-flex justify-content-space-between">
+      <p>Bulk Action:</p>
+
+      <div class="d-flex align-item-center">
+        <button class="button blue w-110px h-35px mx-20">Detail</button>
+        <button
+          class="button text-normal w-106px h-35px red"
+          (click)="deleteManyTask()"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

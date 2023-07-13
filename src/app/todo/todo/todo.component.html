@@ -1,0 +1,24 @@
+<div class="mb-20">
+  <div class="task p-15 d-flex justify-content-space-between">
+    <input class="check-box mr-10" type="checkbox" (change)="onChange()" />
+    <span class="mr-auto">{{ todoInput.title }}</span>
+    <div *ngIf="todoInput.isChecked" class="d-flex">
+      <button class="button blue-100 w-93px mx-10" (click)="onDetailClick()">
+        Detail
+      </button>
+      <button class="button red w-79px" (click)="removeClicked.emit(todoInput)">
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <!-- Update task  -->
+  <div *ngIf="isEdit" class="update-task">
+    <div class="w-85 py-20 m-auto">
+      <app-create
+        [todo]="todoInput"
+        (confirmClicked)="confirmClicked.emit()"
+      ></app-create>
+    </div>
+  </div>
+</div>
