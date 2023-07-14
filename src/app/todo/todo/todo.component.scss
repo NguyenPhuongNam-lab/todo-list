@@ -1,6 +1,7 @@
 @import "/src/styles/variables";
 
 .check-box {
+  min-width: 20px;
   width: 20px;
   height: 20px;
   border: 1px solid $black;
@@ -14,4 +15,8 @@
 
 .update-task {
   border: 1px solid $black;
+}
+
+.title-task {
+  word-break: break-all;
 }

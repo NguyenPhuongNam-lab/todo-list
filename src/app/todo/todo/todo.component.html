@@ -1,7 +1,7 @@
 <div class="mb-20">
   <div class="task p-15 d-flex justify-content-space-between">
     <input class="check-box mr-10" type="checkbox" (change)="onChange()" />
-    <span class="mr-auto">{{ todoInput.title }}</span>
+    <span class="title-task mr-auto">{{ todoInput.title }}</span>
     <div *ngIf="todoInput.isChecked" class="d-flex">
       <button class="button blue-100 w-93px mx-10" (click)="onDetailClick()">
         Detail
